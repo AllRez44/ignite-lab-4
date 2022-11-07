@@ -4,21 +4,21 @@ import { ReactNode } from 'react';
 
 
 
-export interface TextProps {
+export interface HeadingProps {
     size?: 'sm' | 'md' | 'lg';
     children: ReactNode; //ReactNode é qualquer elemento válido como children (nó filho)
     asChild?: boolean;
 }
                      // Props: Default size value assigned as 'md'; Call props children and asChild
-export function Text({ size = 'md', children, asChild}: TextProps){
-    const Comp = asChild ? Slot : 'span' // Caso o componente Slot não tenha elemento filho definidos (p, h1, div, etc.), serão spans. 
+export function Heading({ size = 'md', children, asChild}: HeadingProps){
+    const Comp = asChild ? Slot : 'h2' // Caso o componente Slot não tenha elemento filho definidos (p, h1, div, etc.), serão spans. 
     return (
         <Comp className={clsx( // Componente Slot serve para repassar todas as propriedades para o elemento filho.
-            'text-gray-100', // Objetivo do Componente: Poder usar qualquer Tag em children 
+            'text-gray-100 font-bold', // Objetivo do Componente: Poder usar qualquer Tag em children 
             {
-                'text-xs': size === 'sm',
-                'text-sm': size === 'md',
-                'text-md': size === 'lg',
+                'text-lg': size === 'sm',
+                'text-xl': size === 'md',
+                'text-2xl': size === 'lg',
             }
         )}>{children}</Comp>
     )

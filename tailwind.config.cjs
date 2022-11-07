@@ -14,6 +14,8 @@ module.exports = {
     },
 
     colors: { // Padroniza as opções de cores para os tokens abaixo. !OBS: Remove outras opões de cores, já que não utiliza o 'extend'.
+      'black': '#000',
+      'white': '#fff',
       'gray-900': '#121214',
       'gray-800': '#202024',
       'gray-400': '#7c7c8a',

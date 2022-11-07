@@ -1,54 +1,52 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Text, TextProps } from './Text'
+import { Heading, HeadingProps } from './Heading'
 
 export default {
-    title: 'Component/Text',
-    component: Text, 
+    title: 'Component/Heading',
+    component: Heading, 
     args: {
-        children: 'Lorem Ipsum ',
+        children: 'Lorem Ipsum',
         size: 'md'
     }, 
     argTypes: {
         size: {
             options: ['sm', 'md', 'lg'],
             control: {
-                disable: true,
-                type: 'inline-radio'
+                disable: true
             }
         }
     }
-} as Meta<TextProps>
+} as Meta<HeadingProps>
 
 // Variant  
-export const Small: StoryObj<TextProps> = {
+export const Small: StoryObj<HeadingProps> = {
     args: {
         size: 'sm'
     }
 }
 
-export const Medium: StoryObj<TextProps> = {
+export const Medium: StoryObj<HeadingProps> = {
     args: {
         size: 'md'
     }
 }
 
-export const Large: StoryObj<TextProps> = {
+export const Large: StoryObj<HeadingProps> = {
     args: {
         size: 'lg'
     }
 }
 
-export const CustomComponent: StoryObj<TextProps> = {
+export const CustomComponent: StoryObj<HeadingProps> = {
     args: {
         children: (
-            <p> Lorem Ipsum - Paragraph</p>
+            <h2> Heading - H2</h2>
         )
     }, 
     argTypes: {
         size: {
             control: {
-                disable: false,
-                type: 'inline-radio'
+                disable: false
             }
         },
         children:{
